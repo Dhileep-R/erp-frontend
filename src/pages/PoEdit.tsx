@@ -47,7 +47,7 @@ export default function PoEdit() {
       }
       navigate('/');
     } catch {
-      setError('Failed to save PO');
+      setError('Failed to save POsssss');
     } finally {
       setSaving(false);
     }
