@@ -24,7 +24,7 @@ export default function PoEdit() {
     setLoading(true);
 
     api
-      .get(`http://localhost:3002/po/${id}`)
+      .get(`${process.env.REACT_APP_PROCUREMENT_URL}/po/${id}`)
       .then(res => setPoNumber(res.data.poNumber))
       .catch(() => setError('Failed to load PO'))
       .finally(() => setLoading(false));
@@ -41,9 +41,9 @@ export default function PoEdit() {
 
     try {
       if (isEdit) {
-        await api.put(`http://localhost:3002/po/${id}`, { poNumber });
+        await api.put(`${process.env.REACT_APP_PROCUREMENT_URL}/po/${id}`, { poNumber });
       } else {
-        await api.post(`http://localhost:3002/po`, { poNumber });
+        await api.post(`${process.env.REACT_APP_PROCUREMENT_URL}/po`, { poNumber });
       }
       navigate('/');
     } catch {

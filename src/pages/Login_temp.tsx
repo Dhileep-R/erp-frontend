@@ -11,7 +11,7 @@ export default function Login({ onLogin }: Props){
   const navigate = useNavigate();
 
   const login = async (): Promise<void> => {
-    const res = await api.post('http://localhost:3001/auth/login', { username });
+    const res = await api.post(`${process.env.REACT_APP_AUTH_URL}/login`, { username });
     setToken(res?.data?.access_token);
     onLogin();
     navigate("/");

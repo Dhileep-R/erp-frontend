@@ -12,7 +12,7 @@ export default function PoList(){
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.get<Po[]>('http://localhost:3002/po')
+    api.get<Po[]>(`${process.env.REACT_APP_PROCUREMENT_URL}/po`)
       .then(res => setPos(res.data));
   }, []);
 
