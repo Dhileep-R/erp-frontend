@@ -19,7 +19,7 @@ export default function PoList(){
   return (
     <>
     <div style={{display:"flex"}}>
-        <h3>PO List</h3>
+        <h3>PO(s) List</h3>
         <button onClick={() => navigate(`/po`)}>Add PO</button>
     </div>
       <table border={1}>
